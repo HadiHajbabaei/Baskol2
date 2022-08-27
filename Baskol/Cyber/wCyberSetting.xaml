@@ -1,0 +1,145 @@
+﻿<UserControl x:Class="Baskol.Cyber.wCyberSetting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                      xmlns:telerikGrid="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.GridView"   
+             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             xmlns:custom="clr-namespace:Class" 
+             xmlns:local="clr-namespace:Baskol.Cyber"
+             mc:Ignorable="d" 
+          Loaded="UserControl_Loaded" Background="White" Style="{StaticResource Normal}" Width="auto" >
+    <UserControl.Resources>
+        <custom:MyConverter x:Key="myConverterPuEneble" />
+    </UserControl.Resources>
+    <telerik:RadBusyIndicator Name="LoadingBusyIndicator" IsBusy="{Binding IsBusy}"  Foreground="Red" FontWeight="Bold">
+        <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <TabControl Name="tbcMorshedloo" Grid.Row="1" Margin="10" BorderThickness="0" Background="WhiteSmoke" Grid.RowSpan="2">
+                <TabControl.Resources>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TabItem">
+                                    <Grid Name="Panel">
+                                        <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="Panel" Property="Background" Value="#4f89c9" />
+                                            <Setter  Property="Foreground" Value="White" />
+                                            <Setter  Property="Margin" Value="0,2,0,-2" />
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="False">
+                                            <Setter TargetName="Panel" Property="Background" Value="#9fb9d6" />
+                                            <Setter  Property="Foreground" Value="White" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+
+                        </Setter>
+
+                    </Style>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="0 20 20 20"/>
+                    </Style>
+                </TabControl.Resources>
+                <TabItem Header="   اطلاعات پایه   " FontFamily="mikhak" >
+
+                    <DataGrid x:Name="dgv"  IsReadOnly="False" FontFamily="b yekan" ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                                             CanUserDeleteRows="False"  Style="{DynamicResource MaterialDesignDataGrid}" SelectionChanged="dgv_SelectionChanged"  >
+                        <DataGrid.Columns> 
+                            <DataGridTemplateColumn  Header="انتخاب">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBox Name="txtSelected" IsReadOnly="True" BorderThickness="0" Background="Transparent" Text="{Binding CyberSelect, Converter={StaticResource myConverterPuEneble}}" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                             TextChanged="txtSelected_TextChanged"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn x:Name="drivername" Header="   نام شرکت    "   Width="auto"   Foreground="Black" FontFamily="b nazanin" FontSize="12" FontWeight="Bold"
+                                                            Binding="{Binding CyberName}"/>
+                            <DataGridTextColumn x:Name="codemelidriver" Header="  خلاصه     "  Width="auto" Foreground="Black" FontFamily="b nazanin" FontSize="12" FontWeight="Bold"
+                                                            Binding="{Binding CyberKholase}"/>
+                            <DataGridTextColumn x:Name="driverphonenumber" Header="دوره   "   Width="auto" Foreground="Black" FontFamily="b nazanin" FontSize="12" FontWeight="Bold"
+                                                            Binding="{Binding CyberDore}"/>
+
+                            <DataGridTextColumn x:Name="drivertagnumber" Header="   ادرس سرور   "   Width="auto" Foreground="Black" FontFamily="b nazanin" FontSize="12" FontWeight="Bold"
+                                                            Binding="{Binding CyberServer }"/>
+
+                            <DataGridTextColumn x:Name="codedriver" Header="  نام کاربری سرور  "   Width="auto" MinWidth="120" Foreground="Black" FontFamily="b nazanin" FontSize="12" FontWeight="Bold"
+                                                            Binding="{Binding CyberUsername}"/>
+
+                            <DataGridTextColumn x:Name="drivercarname" Header="  رمز عبور سرور    " MinWidth="120"   Width="auto" Foreground="Black" FontFamily="b nazanin" FontSize="12" FontWeight="Bold"
+                                                            Binding="{Binding CyberPassword}"/>
+
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+
+                </TabItem>
+            </TabControl>
+      
+            <Border Grid.Row="5" BorderBrush="#4f89c9" Margin="12" BorderThickness="1" CornerRadius="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="15"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Name="btnSabt" Grid.Column="1" Grid.Row="1"  Background="#4f89c9"  Content="ثبت" FontFamily="mikhak" FontSize="14" Foreground="White" BorderBrush="#00000000"
+                            Click="btnSave_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Name="btnTest" Grid.Column="3" Grid.Row="1"  Background="#4f89c9"  Content="تست" FontFamily="mikhak" FontSize="14" Foreground="White" BorderBrush="#00000000"
+                            Click="btnTest_Click" >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button Name="btnSelect" Grid.Column="5" Grid.Row="1"  Background="#4f89c9"  Content="انتخاب" FontFamily="mikhak" FontSize="14" Foreground="White" BorderBrush="#00000000"
+                            Click="btnSelect_Click" >
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                </Grid>
+            </Border>
+        </Grid>
+    </telerik:RadBusyIndicator>
+
+</UserControl>

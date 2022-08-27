@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <Style x:Key="dgvColumn-Main" TargetType="{x:Type telerik:GridViewDataColumn}">
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="HeaderTextAlignment" Value="Center"/>
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="ToolTipService.IsEnabled" Value="True"/>
+    </Style>
+    <Style x:Key="dgvColumn-MainRight" TargetType="{x:Type telerik:GridViewDataColumn}">
+        <Setter Property="TextAlignment" Value="Left"/>
+        <Setter Property="HeaderTextAlignment" Value="Center"/>
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+    <Style x:Key="RowStyle" TargetType="telerik:GridViewRow">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="FontFamily" Value="Mikhak"/>
+    </Style>
+    <Style x:Key="HeaderStyle" TargetType="telerik:GridViewHeaderRow">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="FontFamily" Value="Mikhak"/>
+
+    </Style>
+    <Style x:Key="cellStyleM" TargetType="telerik:GridViewCell" >
+        <Setter Property="Background" Value="Red"  />
+        <Setter Property="Foreground" Value="Red" />
+        <Setter Property="FontFamily" Value="Mikhak"/>
+    </Style>
+    <Style x:Key="cellStyle" TargetType="telerik:GridViewCell" >
+        <Setter Property="Background" Value="{telerik:CrystalResource ResourceKey=AccentBrush}"  />
+        <Setter Property="Foreground" Value="{telerik:CrystalResource ResourceKey=MainBrush}" />
+        <Setter Property="FontFamily" Value="Mikhak"/>
+    </Style>
+    <Style x:Key="cellStyleS" TargetType="telerik:GridViewCell" >
+        <Setter Property="Background" Value="Green" />
+        <Setter Property="Foreground" Value="Green" />
+        <Setter Property="FontFamily" Value="Mikhak"/>
+    </Style>
+    <Style x:Key="cellStyleMF" TargetType="telerik:GridViewCell" >
+        <Setter Property="Background" Value="Blue" />
+        <Setter Property="Foreground" Value="Blue" />
+    </Style>
+    <Style x:Key="DgvCellTelerikCheck" TargetType="telerik:GridViewCell">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FlowDirection" Value="LeftToRight"/>
+        <Setter Property="ToolTipService.IsEnabled" Value="True"/>
+        <Setter Property="FontFamily" Value="Mikhak"/>
+    </Style>
+
+   
+    <Style x:Key="DgvCellTelerikExpression" TargetType="telerik:GridViewCell">
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Mikhak"/>
+    </Style>
+    <Style x:Key="GridViewNewRowStyle" TargetType="telerik:GridViewNewRow">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FontFamily" Value="Mikhak"/>
+       
+    </Style>
+    <Style x:Key="HeaderCellStyle" TargetType="telerik:GridViewHeaderCell">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="FontFamily" Value="Mikhak"/>
+    </Style>
+
+</ResourceDictionary>

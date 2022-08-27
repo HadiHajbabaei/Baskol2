@@ -1,0 +1,82 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
+
+    <Style x:Key="win" TargetType="{x:Type Window}" BasedOn="{x:Null}">
+        <Setter Property="FontFamily" Value="Mikhak" />
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="WindowState" Value="Normal" />
+        <Setter Property="WindowStyle" Value="None" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="AllowsTransparency" Value="True" />
+    </Style>
+    <Style x:Key="RadWindowStyle" TargetType="{x:Type telerik:RadWindow}" BasedOn="{x:Null}">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="FontFamily" Value="Mikhak" />
+        <Setter Property="WindowStartupLocation" Value="CenterScreen" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="WindowState" Value="Maximized" />
+        <Setter Property="Height" Value="650" />
+        <Setter Property="Width" Value="1000" />
+    </Style>
+    <Style x:Key="UserControlStyle" TargetType="{x:Type UserControl}" BasedOn="{x:Null}">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="FontFamily" Value="Mikhak" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+       
+    </Style>
+    <Style x:Key="RadMyWindowStyle" TargetType="{x:Type telerik:RadWindow}" BasedOn="{x:Null}">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="FontFamily" Value="Mikhak" />
+        <Setter Property="WindowStartupLocation" Value="CenterScreen" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="WindowState" Value="Normal" />
+        <Setter Property="Height" Value="400" />
+        <Setter Property="Width" Value="700" />
+    </Style>
+    <Style x:Key="RadWindowSizeNormalStyle" TargetType="{x:Type telerik:RadWindow}" BasedOn="{x:Null}">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="FontFamily" Value="Mikhak" />
+        <Setter Property="WindowStartupLocation" Value="CenterScreen" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="WindowState" Value="Normal" />
+    </Style>
+    <Style x:Key="RadRibbonWindowLoginStyle" TargetType="{x:Type telerik:RadRibbonWindow}" BasedOn="{x:Null}">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="FontFamily" Value="Mikhak" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Height" Value="450" />
+        <Setter Property="Width" Value="300" />
+    </Style>
+    <Style x:Key="RadRibbonWindowMainStyle" TargetType="{x:Type telerik:RadRibbonWindow}" BasedOn="{x:Null}">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="FontFamily" Value="Mikhak" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Height" Value="auto" />
+        <Setter Property="Width" Value="auto" />
+        <Setter Property="FontFamily" Value="Mikhak" /> 
+        <Setter Property="WindowState" Value="Maximized"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="12"/>
+    </Style>
+    <Style x:Key="RadWindowMessageStyle" TargetType="{x:Type telerik:RadWindow}" BasedOn="{x:Null}">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="FontFamily" Value="Mikhak" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="WindowState" Value="Normal"/>
+        <Setter Property="Width" Value="400"/>
+        <Setter Property="Height" Value="250"/>
+    </Style>
+    <Style x:Key="RadRibbonWindowDBStyle" TargetType="{x:Type telerik:RadRibbonWindow}" BasedOn="{x:Null}">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="FontFamily" Value="Mikhak" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="WindowState" Value="Normal"/>
+        <Setter Property="Width" Value="400"/>
+        <Setter Property="Height" Value="250"/>
+    </Style>
+</ResourceDictionary>

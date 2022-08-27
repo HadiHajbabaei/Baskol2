@@ -1,0 +1,2009 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                     xmlns:gif="http://wpfanimatedgif.codeplex.com">
+
+
+    <Style x:Key="shadowborder" TargetType="{x:Type Border}">
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="10" ShadowDepth="1"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Login" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">ورود</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Pic/login.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LoginOut" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">خروج</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Pic/loginOut.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Accept" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">تایید</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/icons/done.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Close" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">بستن</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/icons/icons8-close-480.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Refresh" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">تازه سازی</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Pic/Refresh.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse"  Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="New" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">جدید</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/New.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="NextPage" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">صفحه بعد</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Pic/NextPage.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="NewRows" TargetType="{x:Type telerik:RadButton}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">سطر جدید</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Pic/NewRow.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ChoosePic" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">انتخاب عکس</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/photo-gallery.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ReStore" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">بازیابی اطلاعات</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/reStore.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Adress" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">انتخاب محل ذخیره سازی</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/live-folder.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="BackUp" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">پشتیبان گیری</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/backup.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Save" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">ذخیره</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/icons8-save-all-480.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Copy" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">کپی </ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/Copy.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Calculat" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">محاسبه</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/Calculate.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SelectAll" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">انتخاب همه</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/SelectAll.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Exel" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">خواندن اظلاعات از اکسل</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/pic/Exel.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Cyber" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">هزینه واحد های خدماتی شایگان</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/pic/CA_Update.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Edit" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">ویرایش</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/Edit.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="BlackList" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">ارسال به لیست سیاه</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Pic/blocked-account.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="load" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">بارگذاری</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Pic/loader.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Up" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">بالا</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/icons/up.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Down" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">پایین</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/icons/down.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Right" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">راست</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/icons/icons8-chevron-right-80.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Left" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">چپ</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/icons/icons8-chevron-left-80.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="AcceptOrder" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">تایید سفارش</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/icons8-inspection-480.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="FolowUp" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">ارسال به پیگیری سفارشات</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Pic/orderhistory.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Print" TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">چاپ</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/icons/icons8-print-480.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="SubPrint" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">جزئیات چاپ</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/icons8-printer-error-480.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Delete" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">حذف</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/delete.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Ebtal" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">ابطال</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/Ebtal.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ConnectToServer" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">اتصال به سرور</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Pic/server2.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Return" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">برگشت سفارش</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Pic/Return.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Search" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">جست و جو</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/icons/search.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Forward" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">انتقال به دوره بعد</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Customer" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">ضافه کردن مشتری</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/icons8-businessman-80.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ShowCustomer" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">نمایش مشتری (F1)</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/icons8-businessman-80.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Driver" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">اضافه کردن راننده</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/icons8-driver-80.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ShowDriver" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">نمایش راننده (F2)</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/icons8-driver-80.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ShowOrder" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">نمایش (F12)</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/Icons/Show.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="Exit" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{DynamicResource MyTooltip}">خروج</ToolTip>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <ControlTemplate.Resources>
+
+                        <Storyboard x:Key="Storyboard1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ellipse">
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ellipse">
+
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <Border x:Name="myborder" BorderBrush="Black" BorderThickness="0" CornerRadius="15" Background="Transparent">
+                            <Image Source="/pic/1/shut.png"/>
+                        </Border>
+                        <Border x:Name="border_s" BorderBrush="#00000000" Background="Transparent" Style="{StaticResource shadowborder}" Visibility="Hidden" BorderThickness="0" CornerRadius="15"/>
+                        <ContentPresenter/>
+                        <Ellipse x:Name="ellipse" Fill="{DynamicResource back_Button_rectangle_click}" Stroke="Black" VerticalAlignment="Center" HorizontalAlignment="Center" Width="0" Height="0" StrokeThickness="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True"/>
+                        <Trigger Property="IsDefaulted" Value="True"/>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="border_s" Value="Visible"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource Storyboard1}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False"/>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

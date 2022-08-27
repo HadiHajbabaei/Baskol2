@@ -1,0 +1,172 @@
+﻿<UserControl x:Class="Baskol.WinSabtCar.WinSabtcar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Baskol.WinSabtCar"
+               xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+      
+             mc:Ignorable="d" 
+            Loaded="UserControl_Loaded" Background="White" Style="{StaticResource Normal}"  >
+    <telerik:RadBusyIndicator Name="LoadingBusyIndicator" IsBusy="{Binding IsBusy}"  Foreground="Red" FontWeight="Bold">
+        <Grid Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="5"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <TabControl Name="tbcMorshedloo" Grid.Row="1" Margin="10" BorderThickness="0" Background="WhiteSmoke" Grid.RowSpan="2">
+                <TabControl.Resources>
+                    <Style TargetType="TabItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TabItem">
+                                    <Grid Name="Panel">
+                                        <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                    </Grid>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter TargetName="Panel" Property="Background" Value="#4f89c9" />
+                                            <Setter  Property="Foreground" Value="White" />
+                                            <Setter  Property="Margin" Value="0,2,0,-2" />
+                                        </Trigger>
+                                        <Trigger Property="IsSelected" Value="False">
+                                            <Setter TargetName="Panel" Property="Background" Value="#9fb9d6" />
+                                            <Setter  Property="Foreground" Value="White" />
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+
+                        </Setter>
+
+                    </Style>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="0 20 20 20"/>
+                    </Style>
+                </TabControl.Resources>
+                <TabItem Header="   اطلاعات پایه   " FontFamily="mikhak" >
+                    <Border  BorderBrush="#4f89c9" Margin="12" BorderThickness="1" CornerRadius="5">
+                        
+                   
+                    <DataGrid x:Name="dgv"  IsReadOnly="True" FontFamily="b yekan" ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                                             CanUserDeleteRows="False" MouseDoubleClick="dgv_MouseDoubleClick" Style="{DynamicResource MaterialDesignDataGrid}"  SelectionChanged="dgv_SelectionChanged_1"
+                               >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="DarayiPuID"   Binding="{Binding DarayiPuID}" />
+                            <DataGridTextColumn x:Name="DarayiName" Header="   نام ماشین   "   Width="auto"   Foreground="Black" FontFamily="b nazanin" FontSize="12" FontWeight="Bold"
+                                                            Binding="{Binding CarName}"/>
+                            <DataGridTextColumn x:Name="DarayiCod" Header="   تاریخ ثبت  "  Width="auto" Foreground="Black" FontFamily="b nazanin" FontSize="12" FontWeight="Bold"
+                                                            Binding="{Binding CarDateTime}"/>
+                            <DataGridTextColumn x:Name="DarayiPelak" Header="   توضیحات   "   Width="auto" Foreground="Black" FontFamily="b nazanin" FontSize="12" FontWeight="Bold"
+                                                            Binding="{Binding CarDescription}"/>
+
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    </Border>
+
+                </TabItem>
+            </TabControl>
+            <Grid Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="1" BorderBrush="#4f89c9" Margin="12" BorderThickness="1" CornerRadius="5">
+                    <Grid  >
+                        <Grid Name="grdBaseInfo">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="125"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="20"/>
+                                <ColumnDefinition Width="0"/>
+
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15"/>
+                                <RowDefinition Height="26"/>
+                                <RowDefinition Height="15"/>
+                                <RowDefinition Height="26"/>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="15"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="1" Grid.Column="1"   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Text="نام ماشین  :" Style="{StaticResource Text}" />
+                            <TextBox Name="TxtCarName"   Background="#f5f4f6" Foreground="#325288" Grid.Row="1" Grid.Column="3" FontFamily="Parastoo Print"
+                                         FontSize="12" FontWeight="Bold">
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="9"/>
+                                        <Setter Property="BorderBrush" Value="White"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+
+
+                            <TextBlock Grid.Row="3" Grid.Column="1"  VerticalAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" HorizontalAlignment="Stretch" Text="توضیحات   :" Style="{StaticResource Text}" />
+                            <TextBox Name="TxtDes"  Background="#f5f4f6" Foreground="#325288" Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Row="3" Grid.Column="3" >
+                                <TextBox.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="9"/>
+                                        <Setter Property="BorderBrush" Value="White"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+
+                        </Grid>
+                    </Grid>
+
+                </Border>
+            </Grid>
+            <Border Grid.Row="5" BorderBrush="#4f89c9" Margin="12" BorderThickness="1" CornerRadius="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="37"/>
+                        <RowDefinition Height="15"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="80"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="80"/>
+
+
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Name="btnSave" Grid.Column="1" Grid.Row="1"  Background="#4f89c9"  Content="ذخیره" FontFamily="mikhak" FontSize="14" Foreground="White" BorderBrush="#00000000"
+                            Click="btnSave_Click">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Name="btnDelete" Grid.Column="3" Grid.Row="1"  Background="#4f89c9"  Content="حذف" FontFamily="mikhak" FontSize="14" Foreground="White" BorderBrush="#00000000"
+                            Click="btnDelete_Click_1">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="20"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+    </telerik:RadBusyIndicator>
+
+</UserControl>

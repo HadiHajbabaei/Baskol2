@@ -1,0 +1,81 @@
+﻿<telerik:RadWindow x:Class="Baskol.Camera.wCameraSetting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                  
+          xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation" 
+             xmlns:local="clr-namespace:Baskol.Camera"
+             mc:Ignorable="d" 
+             Loaded="UserControl_Loaded"    Style="{StaticResource RadMyWindowStyle}">
+    <Grid>
+        <Border  BorderBrush="#4f89c9"  Margin="12" BorderThickness="1" CornerRadius="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+                <Button Name="btnSelect" Grid.Column="1" Grid.Row="2"  Background="#4f89c9"  Content="انتخاب" FontFamily="mikhak" FontSize="14" Foreground="White" BorderBrush="#00000000"
+                            Click="btnSelect_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button Name="btnSaveto" Grid.Column="1" Grid.Row="4"  Background="#4f89c9"  Content="مسیر ذخیره سازی" FontFamily="mikhak" FontSize="14" Foreground="White" BorderBrush="#00000000"
+                            Click="btnSaveto_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <TextBox Name="TxtCamera" Grid.Row="2" Grid.Column="3"  IsReadOnly="True"
+                                   FontFamily="Far.Yas" FontSize="12"   Foreground="#313552" FontWeight="Bold" 
+                                         BorderBrush="White" VerticalContentAlignment="Center" TextAlignment="Center"  Background="#f5f4f6" >
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="9"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <TextBox Name="TxtMasir" Grid.Row="4" Grid.Column="3"  IsReadOnly="True"
+                                   FontFamily="Far.Yas" FontSize="12"  Foreground="#313552" FontWeight="Bold" 
+                                         BorderBrush="White" VerticalContentAlignment="Center" TextAlignment="Center"  Background="#f5f4f6" >
+                    <TextBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="9"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <Button Name="btnSave" Grid.Column="1" Grid.Row="6"   Background="#4f89c9"  Content=" ذخیره " FontFamily="mikhak" FontSize="14" Foreground="White" BorderBrush="#00000000"
+                            Click="btnSave_Click">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="20"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            </Grid>
+        </Border>
+  
+    </Grid>
+
+</telerik:RadWindow>

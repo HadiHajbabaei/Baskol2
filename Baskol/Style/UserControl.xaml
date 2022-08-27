@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="Normal" TargetType="{x:Type UserControl}" BasedOn="{x:Null}">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Mikhak" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Height" Value="600" />
+        <Setter Property="Width" Value="800" />
+    </Style>
+    <Style x:Key="BackupAndRestor" TargetType="{x:Type UserControl}" BasedOn="{x:Null}">
+        <Setter Property="FlowDirection" Value="RightToLeft" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Mikhak" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="FontWeight" Value="Bold" /> 
+    </Style>
+</ResourceDictionary>

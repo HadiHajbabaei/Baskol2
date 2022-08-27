@@ -1,0 +1,750 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E23768A9-8EAB-48B2-B1A7-84CE4C4B9112}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Baskol</RootNamespace>
+    <AssemblyName>Baskol</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.4.3.0\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.2.0.0\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.6.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.6\lib\net452\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.MahApps, Version=0.2.2.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.MahApps.0.2.2\lib\net452\MaterialDesignThemes.MahApps.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.5.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.5.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaFoundation, Version=3.1.0.32450, Culture=neutral, PublicKeyToken=36fa660e1d6ebf8d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\MediaFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="OzekiSDK">
+      <HintPath>..\..\Pic\Pic\bin\Debug\OzekiSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="PersianDate">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\PersianDate.dll</HintPath>
+    </Reference>
+    <Reference Include="PersianDateControls">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\PersianDateControls.dll</HintPath>
+    </Reference>
+    <Reference Include="PersianToolkit">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\PersianToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Stimulsoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Editor">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Stimulsoft.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Check">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Stimulsoft.Report.Check.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Design">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Stimulsoft.Report.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Helper">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Stimulsoft.Report.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Win">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Wpf.BlackTheme">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Stimulsoft.Report.Wpf.BlackTheme.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Documents.SpreadsheetStreaming">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Documents.SpreadsheetStreaming.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Pivot.Core">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Pivot.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Pivot.DataProviders.Adomd">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Pivot.DataProviders.Adomd.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Pivot.DataProviders.Queryable">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Pivot.DataProviders.Queryable.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Pivot.DataProviders.Xmla">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Pivot.DataProviders.Xmla.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Cloud">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Cloud.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Cloud.Controls">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Cloud.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart.Direct2D">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Chart.Direct2D.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Charting">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.ConversationalUI">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.ConversationalUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataServices">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.DataServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataServices50">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.DataServices50.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataServices60">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.DataServices60.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Diagrams">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Diagrams.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Diagrams.Extensions">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Diagrams.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Diagrams.Ribbon">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Diagrams.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.EntityFramework">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.EntityFramework60">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.EntityFramework60.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Expressions">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.FileDialogs">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.FileDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.FixedDocumentViewers">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.FixedDocumentViewers.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.FixedDocumentViewersUI">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.FixedDocumentViewersUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GanttView">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.GanttView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView.Export">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.GridView.Export.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView.SpreadsheetStreamingExport">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.GridView.SpreadsheetStreamingExport.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.ImageEditor">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.ImageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Media">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Pivot">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Pivot.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.PivotFieldList">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.PivotFieldList.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RichTextBoxUI">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.RichTextBoxUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.ScheduleView">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.ScheduleView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Spreadsheet">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.SpreadsheetUI">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.SpreadsheetUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.SyntaxEditor">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.SyntaxEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.VirtualGrid">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Controls.VirtualGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Diagrams.Core">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Diagrams.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow.FormatProviders.Pdf">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.Flow.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Html">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.FormatProviders.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.OpenXml">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Pdf">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Rtf">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.FormatProviders.Rtf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Xaml">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.FormatProviders.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.Proofing.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing.DataGrid">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.Proofing.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing.Dictionaries.En-US">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.Proofing.Dictionaries.En-US.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing.RadGridView">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.Proofing.RadGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Documents.Spreadsheet.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.MediaFoundation">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.MediaFoundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.PersistenceFramework">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.PersistenceFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Scheduling.Core">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Scheduling.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.SyntaxEditor.Core">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.SyntaxEditor.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip.Extensions">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\Telerik.Windows.Zip.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="ValiDation">
+      <HintPath>F:\Darayi-Sabet2\Darayi-Sabet\Darayi-Sabet\bin\Debug\ValiDation.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Camera\wCameraSetting.xaml.cs">
+      <DependentUpon>wCameraSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cyber\PrivateClass\Clscyber.cs" />
+    <Compile Include="Cyber\wCyberSetting.xaml.cs">
+      <DependentUpon>wCyberSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Excels\Customer\wCustomerExcel.xaml.cs">
+      <DependentUpon>wCustomerExcel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Excels\Driver\wExcelDriver.xaml.cs">
+      <DependentUpon>wExcelDriver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Excels\ُSabt mahsol\WsabtemahsolExcel.xaml.cs">
+      <DependentUpon>WsabtemahsolExcel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Factor\PrivateClass\ClsFactor.cs" />
+    <Compile Include="Factor\wFactor.xaml.cs">
+      <DependentUpon>wFactor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="icons\wcustomer.cs" />
+    <Compile Include="Report\PrivateCalss\ClsReport.cs" />
+    <Compile Include="Report\wReportTozin.xaml.cs">
+      <DependentUpon>wReportTozin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tozin\PriavteClass\ClsPrint.cs" />
+    <Compile Include="Tozin\TozinDasti\wTozinDasti.xaml.cs">
+      <DependentUpon>wTozinDasti.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Tozin\WTozin.xaml.cs">
+      <DependentUpon>WTozin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\wCustomer.xaml.cs">
+      <DependentUpon>wCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Update\Customer\ClsCustomer.cs" />
+    <Compile Include="Update\Customer\wUpdateCustomer.xaml.cs">
+      <DependentUpon>wUpdateCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinComPortDetails.xaml.cs">
+      <DependentUpon>WinComPortDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="winConnectionDB.xaml.cs">
+      <DependentUpon>winConnectionDB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinInfo.xaml.cs">
+      <DependentUpon>WinInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinSabtCar\P.Class\Player.cs" />
+    <Compile Include="WinSabtCar\WinSabtcar.xaml.cs">
+      <DependentUpon>WinSabtcar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinSabtDriver\WinSabtDriver.xaml.cs">
+      <DependentUpon>WinSabtDriver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinSabtMahsol\WinSabtMahsol.xaml.cs">
+      <DependentUpon>WinSabtMahsol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinYesOrNo.xaml.cs">
+      <DependentUpon>WinYesOrNo.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Camera\wCameraSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cyber\wCyberSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Excels\Customer\wCustomerExcel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Excels\Driver\wExcelDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Excels\ُSabt mahsol\WsabtemahsolExcel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Factor\wFactor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LogIn_App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class\Checking.cs" />
+    <Compile Include="Class\ClassLanguageFilterDataGrid.cs" />
+    <Compile Include="Class\Clears.cs" />
+    <Compile Include="Class\clsConvert.cs" />
+    <Compile Include="Class\clsExcel.cs" />
+    <Compile Include="Class\ClsMenu.cs" />
+    <Compile Include="Class\clsMessageBox.cs" />
+    <Compile Include="Class\clsPrint.cs" />
+    <Compile Include="Class\ClsPublic.cs" />
+    <Compile Include="Class\ClsUsersLogin.cs" />
+    <Compile Include="Class\CPU.cs" />
+    <Compile Include="Class\CreateColumn.cs" />
+    <Compile Include="Class\Crypt.cs" />
+    <Compile Include="Class\DatePersian.cs" />
+    <Compile Include="Class\Factor.cs" />
+    <Compile Include="Class\MyColumn.cs" />
+    <Compile Include="Class\MyConverter.cs" />
+    <Compile Include="Class\PersianDateTimeHelper.cs" />
+    <Compile Include="Class\TypeOrder.cs" />
+    <Compile Include="Class\verify.cs" />
+    <Compile Include="Class\ViewModel.cs" />
+    <Compile Include="LogIn_App.xaml.cs">
+      <DependentUpon>LogIn_App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Report\wReportTozin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Style\Buttonstyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\GridViewDataColumn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\NewStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\PersianDatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\ProgressBarStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\RadGridView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\RadMaskedTextInput.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\TexBoxStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\TextBlockStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\ToolTip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\UserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\windows.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Tozin\TozinDasti\wTozinDasti.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tozin\WTozin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customer\wCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Update\Customer\wUpdateCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinComPortDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="winConnectionDB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinSabtCar\WinSabtcar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinSabtDriver\WinSabtDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinSabtMahsol\WinSabtMahsol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinYesOrNo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="icons\Thumbs.db" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\AccountNumber.png" />
+    <Resource Include="icons\addanbar.png" />
+    <Resource Include="icons\adddriver.png" />
+    <Resource Include="icons\addGoods.png" />
+    <Resource Include="icons\attach.png" />
+    <Resource Include="icons\backup.png" />
+    <Resource Include="icons\Bank.png" />
+    <Resource Include="icons\blacklist.png" />
+    <Resource Include="icons\Branch.png" />
+    <Resource Include="icons\Calculate.png" />
+    <Resource Include="icons\Calendar.png" />
+    <Resource Include="icons\checked-user.png" />
+    <Resource Include="icons\Color.png" />
+    <Resource Include="icons\Company.png" />
+    <Resource Include="icons\Copy.png" />
+    <Resource Include="icons\Cordex.png" />
+    <Resource Include="icons\Cycle %282%29.png" />
+    <Resource Include="icons\Delet.png" />
+    <Resource Include="icons\Delete.png" />
+    <Resource Include="icons\Divisoin.png" />
+    <Resource Include="icons\done.png" />
+    <Resource Include="icons\Dore.png" />
+    <Resource Include="icons\down.png" />
+    <Resource Include="icons\Ebtal.png" />
+    <Resource Include="icons\Edit.png" />
+    <Resource Include="icons\EditCordex.png" />
+    <Resource Include="icons\EnterAnbar.png" />
+    <Resource Include="icons\exitAnbar.png" />
+    <Resource Include="icons\Follow.png" />
+    <Resource Include="icons\icons8-access-480.png" />
+    <Resource Include="icons\icons8-businessman-80.png" />
+    <Resource Include="icons\icons8-check-book-80.png" />
+    <Resource Include="icons\icons8-chevron-down-80.png" />
+    <Resource Include="icons\icons8-chevron-left-80.png" />
+    <Resource Include="icons\icons8-chevron-right-80.png" />
+    <Resource Include="icons\icons8-chevron-up-80.png" />
+    <Resource Include="icons\icons8-close-480.png" />
+    <Resource Include="icons\icons8-condo-80.png" />
+    <Resource Include="icons\icons8-driver-80.png" />
+    <Resource Include="icons\icons8-inspection-480.png" />
+    <Resource Include="icons\icons8-new-product-80.png" />
+    <Resource Include="icons\icons8-print-480.png" />
+    <Resource Include="icons\icons8-printer-error-480.png" />
+    <Resource Include="icons\icons8-purchase-order-480.png" />
+    <Resource Include="icons\icons8-resume-80.png" />
+    <Resource Include="icons\icons8-rs-232-male-96.png" />
+    <Resource Include="icons\icons8-save-all-480.png" />
+    <Resource Include="icons\icons8-send-80.png" />
+    <Resource Include="icons\icons8-sms-80.png" />
+    <Resource Include="icons\icons8-sorting-80.png" />
+    <Resource Include="icons\icons8-spreadsheet-80.png" />
+    <Resource Include="icons\icons8-suv-80.png" />
+    <Resource Include="icons\icons8-truck-80.png" />
+    <Resource Include="icons\icons8-upload-to-the-cloud-480.png" />
+    <Resource Include="icons\icons8-upload-to-the-cloud-80.png" />
+    <Resource Include="icons\icons8-user-480.png" />
+    <Resource Include="icons\icons8-warehouse-80.png" />
+    <Resource Include="icons\live-folder.png" />
+    <Resource Include="icons\loginOut.png" />
+    <Resource Include="icons\Machin.png" />
+    <Resource Include="icons\Making.png" />
+    <Resource Include="icons\Material.png" />
+    <Resource Include="icons\MojodiAnbar.png" />
+    <Resource Include="icons\new.png" />
+    <Resource Include="icons\photo-gallery.png" />
+    <Resource Include="icons\prioritize.png" />
+    <Resource Include="icons\Product.png" />
+    <Resource Include="icons\production capacity.png" />
+    <Resource Include="icons\PublicCost.png" />
+    <Resource Include="icons\ReciveFromWeb.png" />
+    <Resource Include="icons\report.png" />
+    <Resource Include="icons\reStore.png" />
+    <Resource Include="icons\search.png" />
+    <Resource Include="icons\SelectAll.png" />
+    <Resource Include="icons\Show.png" />
+    <Resource Include="icons\Timer.png" />
+    <Resource Include="icons\Unit.png" />
+    <Resource Include="icons\Unit2.png" />
+    <Resource Include="icons\UnitTime.png" />
+    <Resource Include="icons\up.png" />
+    <Resource Include="icons\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Picc\aaaaa.jpg" />
+    <Resource Include="Picc\addbime.png" />
+    <Resource Include="Picc\addbimeshobe.png" />
+    <Resource Include="Picc\arkaz.png" />
+    <Resource Include="Picc\background.jpg" />
+    <Resource Include="Picc\background2.jpg" />
+    <Resource Include="Picc\background3.jpg" />
+    <Resource Include="Picc\bimedarayi.png" />
+    <Resource Include="Picc\clik3-4.png" />
+    <Resource Include="Picc\data.png" />
+    <Resource Include="Picc\exm.png" />
+    <Resource Include="Picc\fff.jpg" />
+    <Resource Include="Picc\fffff.jpg" />
+    <Resource Include="Picc\ffffhh.png" />
+    <Resource Include="Picc\heder.png" />
+    <Resource Include="Picc\Inbox.png" />
+    <Resource Include="Picc\InboxA.png" />
+    <Resource Include="Picc\InboxP.png" />
+    <Resource Include="Picc\InboxPw.jpg" />
+    <Resource Include="Picc\jamdar.png" />
+    <Resource Include="Picc\LognP.png" />
+    <Resource Include="Picc\logo.png" />
+    <Resource Include="Picc\opration.png" />
+    <Resource Include="Picc\person.png" />
+    <Resource Include="Picc\report.png" />
+    <Resource Include="Picc\serch.png" />
+    <Resource Include="Picc\setting.png" />
+    <Resource Include="Picc\Venice Blue.jpg" />
+    <Resource Include="Picc\www.png" />
+    <Resource Include="Picc\اطلاعات پایه.png" />
+    <Resource Include="Picc\شرکت.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyDB.Business\MyDB.BusinessLayer.csproj">
+      <Project>{c6fd9f84-a18e-472d-ba4b-7ed274f5b276}</Project>
+      <Name>MyDB.BusinessLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Company\" />
+    <Folder Include="Excels\NewFolder1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.5.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>
